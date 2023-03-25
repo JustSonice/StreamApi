@@ -18,6 +18,7 @@ public class Main {
                     Education.values()[new Random().nextInt(Education.values().length)])
             );
         }
+
    // 1
         long count = persons.stream()
                 .filter(age -> age.getAge() > 18)
@@ -36,7 +37,15 @@ public class Main {
         List<String> worker = persons.stream()
                 .filter(education -> education.getEducation().equals(Education.HIGHER))
                 .filter(age ->  age.getAge() > 18)
-                .filter((age, sex) -> sex.getSex.equals(Sex.MAN) && age.getAge() < 65 && sex.getSex.equals(Sex.WOMAN) & age.getAge() < 65)
+                .filter(Person -> {
+                    if (Person.getSex().equals(Sex.MAN) && Person.getAge() < 65){
+                    return true;
+                } else if ( Person.getSex().equals(Sex.WOMAN) && Person.getAge() < 60) {
+                    return true;
+                } else {
+                        return false;
+                    }
+                })
                 .sorted(Comparator.comparing(Person::getFamily))
                 .map(Person::toString)
                 .collect(Collectors.toList());
