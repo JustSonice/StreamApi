@@ -30,3 +30,6 @@ bin/
 out
 .idea
 Stream Api.iml
+pom.xml
+target
+.idea

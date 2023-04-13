@@ -1,3 +1,4 @@
+
 public enum Education {
     ELEMENTARY,
     SECONDARY,
